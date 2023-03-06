@@ -4,6 +4,7 @@ const nextConfig = {
   env: {
     AUTH_0_DOMAIN: "yourAuth0AppDomain",
     AUTH_0_CLIENT: "yorAuth0AppClient",
+    OPENWEATHER_API_KEY: "yourOpenWeatherApiKey",
   }
 }
 

@@ -3,6 +3,7 @@ import { useAuth0, LogoutOptions } from '@auth0/auth0-react';
 import { useDispatch } from 'react-redux';
 import { setAuthState, setUserState } from '@/store/authSlice';
 import NavBar from '@/components/NavBar';
+import Weather from '@/components/Weather';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const Home = () => {
     <>
       <NavBar logout={() => logout({ returnTo } as LogoutOptions)} />
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md space-y-8">
+        <div className="w-full max-w-2xl space-y-8">
           {!isAuthenticated ? (
             <>
               <div>
@@ -58,9 +59,10 @@ const Home = () => {
           ) : (
             <div className="mt-10 flex-col items-end justify-center gap-x-6">
               <div className="text-center">{user?.name}</div>
-              <div className="text-center">
+              <div className="text-center mb-4">
                 <a href={gitUserLink} target="_blank" rel="noreferrer">{gitUserLink}</a>
               </div>
+              <Weather />
             </div>
           )}
         </div>
